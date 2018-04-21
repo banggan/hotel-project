@@ -1,0 +1,13 @@
+F:\hotal-project\main\main\bin\Debug\main.exe.config
+F:\hotal-project\main\main\bin\Debug\main.exe
+F:\hotal-project\main\main\bin\Debug\main.pdb
+F:\hotal-project\main\main\obj\Debug\MainWindow.baml
+F:\hotal-project\main\main\obj\Debug\MainWindow.g.cs
+F:\hotal-project\main\main\obj\Debug\App.g.cs
+F:\hotal-project\main\main\obj\Debug\main_MarkupCompile.cache
+F:\hotal-project\main\main\obj\Debug\main.g.resources
+F:\hotal-project\main\main\obj\Debug\main.Properties.Resources.resources
+F:\hotal-project\main\main\obj\Debug\main.csproj.GenerateResource.Cache
+F:\hotal-project\main\main\obj\Debug\main.exe
+F:\hotal-project\main\main\obj\Debug\main.pdb
+F:\hotal-project\main\main\obj\Debug\main.csprojResolveAssemblyReference.cache

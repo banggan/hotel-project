@@ -1,0 +1,135 @@
+﻿<Window x:Class="main.CheckMsg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="900" Width="1400" WindowStyle="None" WindowState="Maximized" ShowInTaskbar="False">
+    <Viewbox Stretch="Fill">
+        <Grid Margin="0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="8*" />
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Stretch="Fill" Source="img/左广告图.jpg" />
+            <Grid Grid.Column="0" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 30">
+                    <Image  VerticalAlignment="Top" Margin="30 30 " Source="img/logo.png" Stretch="Fill"/>
+                    <!--画线区域-->
+                    <Canvas HorizontalAlignment="Left"  Margin="0 20 ">
+                        <Path    HorizontalAlignment="Left" Stroke="white" StrokeThickness="3" Canvas.Top="6" >
+                            <Path.Data>
+                                <LineGeometry StartPoint="0,0" EndPoint="0,70"></LineGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                    <Label  VerticalAlignment="Top" HorizontalAlignment="Left" Margin=" 10 20"  Foreground="White" Content="星期二 " FontSize="22"></Label>
+                    <Label  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 20" Foreground="White" Content="19: 00 " FontSize="22"></Label>
+                    <Label  VerticalAlignment="Bottom"  HorizontalAlignment="Left" Foreground="White" Margin="-190 20 " Content="2018/04/01 " FontSize="22"></Label>
+                </StackPanel>
+            </Grid>
+            <!--中间区域-->
+            <Image Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="img/背景.png"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="UniformToFill"  />
+            <Grid Grid.Column="1"  Grid.Row="0" Grid.RowSpan="2" Margin="100 0">
+                <Border HorizontalAlignment="Center" Margin="10 0"  VerticalAlignment="Center" BorderBrush="White" BorderThickness="1">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"   VerticalAlignment="Center" Background="#999999">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="8*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="2*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  Background="#C4C4C4" BorderBrush="White" BorderThickness="1">
+                                <Label HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 " Foreground="White"  FontSize="36" FontWeight="Bold" Content="订单信息" />
+                            </Border>
+                            <Label Grid.Row="1" Grid.Column="0" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 " FontSize="36" FontWeight="Bold" Content="入住房间:" />
+                            <Label Grid.Row="1" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="xxx酒店-E区-12栋-902A" x:Name="checkRoom"/>
+                            <Label Grid.Row="2" Grid.Column="0" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 " FontSize="36" FontWeight="Bold" Content="入住时间:" />
+                            <Label Grid.Row="2" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="2018年4月16日" x:Name="checkTime"/>
+                            <Label Grid.Row="3" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="28" Content="(最晚当天下午14：00入住)" />
+                            <Label Grid.Row="4" Grid.Column="0" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="离开时间：" />
+                            <Label Grid.Row="4" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="2018年4月17日" x:Name="leftTime"/>
+                            <Label Grid.Row="5" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="28" Content="(最晚当天下午13：00离开)" />
+                            <Label Grid.Row="6" Grid.Column="0" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="详细地址：" />
+                            <Label Grid.Row="6" Grid.Column="1" Foreground="Black"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10" FontSize="36" FontWeight="Bold" Content="xxxx" x:Name="address"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <!--右侧区域-->
+            <Grid  Grid.Column="2" Grid.RowSpan="2">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 30">
+                    <Button Name="lastBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10 ">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/上一个.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/上一个（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Name="nextBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10 ">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/下一个.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/下一个（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Name="enterBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10 " Click="enterBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/确认入住.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/确认入住（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Name="homeBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10 " Click="homeBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/首页.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/首页（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>

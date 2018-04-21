@@ -1,0 +1,296 @@
+﻿<Window x:Class="main.PhoneReco"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="900" Width="1400" WindowStyle="None" WindowState="Maximized" ShowInTaskbar="False">
+    <Viewbox Stretch="Fill">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="8*" />
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Stretch="Fill" Source="img/左广告图.jpg" />
+            <Grid Grid.Column="0" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 30">
+                    <Image  VerticalAlignment="Top" Margin="30 30 " Source="img/logo.png" Stretch="Fill"/>
+                    <!--画线区域-->
+                    <Canvas HorizontalAlignment="Left"  Margin="0 20 ">
+                        <Path    HorizontalAlignment="Left" Stroke="white" StrokeThickness="3" Canvas.Top="6" >
+                            <Path.Data>
+                                <LineGeometry StartPoint="0,0" EndPoint="0,70"></LineGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Canvas>
+                    <Label  VerticalAlignment="Top" HorizontalAlignment="Left" Margin=" 10 20"  Foreground="White" Content="星期二 " FontSize="22"></Label>
+                    <Label  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 20" Foreground="White" Content="19: 00 " FontSize="22"></Label>
+                    <Label  VerticalAlignment="Bottom"  HorizontalAlignment="Left" Foreground="White" Margin="-190 20 " Content="2018/04/01 " FontSize="22"></Label>
+                </StackPanel>
+            </Grid>
+            <!--中间区域-->
+            <Image Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Source="img/背景.png"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="UniformToFill"  />
+            <Grid Grid.Column="1"  Grid.Row="0" Grid.RowSpan="2">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="100 0"  VerticalAlignment="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                       
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 " Foreground="White"  FontSize="36" FontWeight="Bold" Content="手机号码"  />
+                        <TextBox x:Name="phoneText" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,10" Foreground="White"  FontSize="36" Text="请输入您的手机号" Background="{x:Null}" Width="758" GotFocus="phoneText_Enter"/>             
+                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 " Foreground="White"  FontSize="36" FontWeight="Bold" Content="验证码"  />
+                        <TextBox x:Name="codeText" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,10" Foreground="White"  FontSize="36"  Text="请输入验证码" Background="{x:Null}" Width="758" GotFocus="codeText_Enter"/>
+                        <Button Name="Btn1"  Grid.Row="4" Grid.Column="0" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/1.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/1（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn2"  Grid.Row="4" Grid.Column="1" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/2.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/2（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn3"  Grid.Row="4" Grid.Column="2" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/3.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/3（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn4"  Grid.Row="5" Grid.Column="0" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/4.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/4（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn5"  Grid.Row="5" Grid.Column="1" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/5.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/5（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn6"  Grid.Row="5" Grid.Column="2" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/6.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/6（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn7"  Grid.Row="6" Grid.Column="0" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/7.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/7（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn8"  Grid.Row="6" Grid.Column="1" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/8.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/8（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn9"  Grid.Row="6" Grid.Column="2" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/9.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/9(点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="clearBtn"  Grid.Row="7" Grid.Column="0" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/清空.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/清空（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="Btn0"  Grid.Row="7" Grid.Column="1" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/0.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/0(点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button Name="backBtn"  Grid.Row="7" Grid.Column="2" Margin="10,10,0,10">
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border>
+                                        <Image Name="img" Source="img/退格.png" Stretch="Fill"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="img" Property="Source" Value="img/退格（点击）.png">
+                                            </Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                       
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+
+            <!--右侧区域-->
+            <Grid  Grid.Column="2" Grid.RowSpan="2">
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 30">
+                    <Button Name="editBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10" Click="editBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/修改号码.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/修改号码（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Name="retrySendBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10" Click="retrySendBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/重新发送.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/重新发送（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Name="homeBtn" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 10 " Click="homeBtn_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border>
+                                    <Image Name="img" Source="img/首页.png" Stretch="Fill"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="img" Property="Source" Value="img/首页（点击）.png">
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>               
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Window>
